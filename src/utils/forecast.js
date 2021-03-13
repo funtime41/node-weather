@@ -28,7 +28,8 @@ const forecast = (lat, long, callback) => {
             callback('error: weather site error. unable to find location.', undefined)
                 //console.log('error: weather site error. unable to find location.')
         } else {
-            callback(undefined, 'Success Location is: ' + response.body.location.name + ' where the temperature is: ' + response.body.current.temperature + ' and weather_descriptions are: ' + response.body.current.weather_descriptions[0] + '. It feels like:  ' + response.body.current.feelslike)
+            console.log(response.body.location)
+            callback(undefined, 'Success Location is: ' + response.body.location.name + ' where the temperature is: ' + response.body.current.temperature + ' and weather_descriptions are: ' + response.body.current.weather_descriptions[0] + '. It feels like:  ' + response.body.current.feelslike + '. Localtime is: ' + response.body.location.localtime)
 
             //console.log('YES Location is: ' + response.body.location.name + ' where the temperature is: ' + response.body.current.temperature + ' and weather_descriptions are: ' + response.body.current.weather_descriptions[0] + '. It feels like:  ' + response.body.current.feelslike)
         }
